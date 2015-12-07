@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Bitgray Shop {%block title %}{%endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    {%block assets %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/superhero/bootstrap.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    {%endblock assets %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1><i class="fa fa-shopping-basket text-warning"></i> Bitgray Shop {%block title_section %}{%endblock title_section %}</h1>
+            <p class="lead">By David Camargo</p>
+          </div>
+          <div class="col-lg-4 col-md-5 col-sm-6">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+          {%block nav%}
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href=""><i class="fa fa-circle-o-notch"> </i> Products CRUD</a>
+              <a class="list-group-item" href=""><i class="fa fa-circle-o-notch"> </i> Sales CRUD</a>
+              <a class="list-group-item" href=""><i class="fa fa-circle-o-notch"> </i> Clients CRUD</a>
+              <a class="list-group-item" href=""><i class="fa fa-circle-o-notch"> </i> Locations CRUD</a>
+              <a class="list-group-item" href=""><i class="fa fa-money"> </i> Query Bills</a>
+              <a class="list-group-item" href=""><i class="fa fa-cart-arrow-down"> </i> Sales Interface</a>
+              <a class="list-group-item" href=""><i class="fa fa-cloud-download"> </i> API</a>
+              <a class="list-group-item" href="http://github.com/davidcp90/django-btg" target="_blank"><i class="fa fa-github"> </i> Git Repository</a>
+            </div>
+            {%endblock nav%}
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-8">
+          {%block content%}
+          {%endblock content%}
+          </div>
+        </div>
+      </div>
+
+
+
+
+</body>
+</html>
