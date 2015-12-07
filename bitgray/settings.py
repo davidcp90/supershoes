@@ -1,5 +1,5 @@
 """
-Django settings for django_project project.
+Django settings for bitgray project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -47,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'django_project.urls'
+ROOT_URLCONF = 'bitgray.urls'
 
-WSGI_APPLICATION = 'django_project.wsgi.application'
+WSGI_APPLICATION = 'bitgray.wsgi.application'
 
 
 # Database
@@ -57,12 +57,12 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': 'django',
-        'PASSWORD': 'Jcv1Tp7HQn',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'bitgray',
+        'USER': 'bitgray',
+        'PASSWORD': 'bitgray',
+        'HOST': '198.211.108.179',
+        'PORT': '3306',
     }
 }
 
