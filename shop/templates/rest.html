@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %} - {{title}}{% endblock %}
+{% block title_section %}{{title}}{% endblock %}
+{% block content %}
+	<p>To access the API you need to use the following credentials: </p>
+	<div class="well">
+		<p><strong>User: </strong> bitgray</p>
+		<p><strong>Password: </strong> qwe1234</p>
+	</div>
+	<p>You could test it via the following browser access, please enter the credentials in <a href="/api-auth/login/">API LOGIN</a> before enter the urls:</p>
+	<a class="list-group-item" href="/shop-api/clients" target="_blank">Clients</a>
+	<a class="list-group-item" href="/shop-api/products" target="_blank">Products</a>
+	<a class="list-group-item" href="/shop-api/purchases" target="_blank">Purchases</a>
+	<a class="list-group-item" href="/shop-api/locations" target="_blank">Locations</a>
+	<br/>
+	<p>You could test it via curl, using the credentials previously beginning:</p>
+	<code>curl -H 'Accept: application/json; indent=4' -u bitgray:qwe12345 http://198.211.108.179/shop-api/clients/</code>
+{% endblock %}
