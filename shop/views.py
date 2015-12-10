@@ -24,6 +24,42 @@ def api_home(request):
     data = {}
     data['title'] = 'API'
     return render(request, 'rest.html', data)
+
+def query_bills(request):
+    data = {}
+    data['title'] = 'Query Bills'
+    return render(request, 'query_bills.html', data)
+def search_bills(request):
+    data = {}
+    info=request.POST
+    total=0
+    if info.get('document'):
+        c=Clientes.objects.get(documento=info.get('document'))
+        if c:
+            p=Compras.objects.filter(id_cliente=c)
+            if p.exists():
+                data['purchases']=p
+                for l in p:
+                    if l.id_producto:
+                        if l.precio:
+                            total=total+int(l.precio)
+                        else:
+                            pr=Productos.objects.get(id=l.id_producto)
+                            total=total+int(pr.precio)
+                data['total']=total
+                data['client']=c
+                data['title'] = 'Bills for '+str(c.nombres)
+            else:
+                data['title'] = 'Query Bills'
+                data['errors'] = 'This client have no bills'
+        else:
+            data['title'] = 'Query Bills'
+            data['errors'] = 'Document is invalid.Client doesnt exist on the database'
+    else:
+        data['title'] = 'Query Bills'
+        data['errors'] = 'Document is empty.Please enter one'
+    
+    return render(request, 'query_bills.html', data)
 #----------------------------------------------------------------------------------------------------/
 # Log
 #----------------------------------------------------------------------------------------------------/

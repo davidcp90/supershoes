@@ -38,4 +38,7 @@ urlpatterns = patterns(
         name='delete_location'),
  #log
  url(r'^log/?$', 'log_crud',name='log_crud'),
+ #search
+ url(r'^search_bills/$', 'search_bills',
+        name='search_bills'),
 )

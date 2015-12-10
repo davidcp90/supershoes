@@ -30,6 +30,7 @@ urlpatterns = [
 url(r'^$', 'shop.views.home', name='home'),
 url(r'^tech/', 'shop.views.tech', name='tech_suggestions'),
 url(r'^api_home/', 'shop.views.api_home', name='api_home'),
+url(r'^query_bills/', 'shop.views.query_bills', name='query_bills'),
 url(r'^purchase_interface/', 'shop.views.purchase_interface', name='purchase_interface'),
 url(r'^shop/', include(shop_urls)),
 url(r'^shop-api/', include(router.urls)),
