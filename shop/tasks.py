@@ -5,10 +5,10 @@ from django.template.loader import render_to_string, get_template
 from django.core.mail import EmailMessage
 from shop.models import *
 from datetime import datetime, timedelta
-@periodic_task(run_every=crontab(minute='*/4'))
+@periodic_task(run_every=crontab(minute='*/120'))
 def send_report():
 	subject = "Sales Report - Bitgray Store"
-	to = ['davidcp90@gmail.com']
+	to = ['bryant.acero@bitgray.co']
 	from_email = 'report@bitgraystore.com'
 	earns=0
 	purchases=Compras.objects.filter(pub_date__gte=datetime.now()-timedelta(days=7))
