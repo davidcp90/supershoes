@@ -28,6 +28,6 @@ class Articles(models.Model):
         default=0, verbose_name=u'Total Articles in Vault')
     store = models.ForeignKey(
         'supershoes.Stores',
-        related_name='articles_stores',
+        related_name='article_store',
         verbose_name='Store'
     )
