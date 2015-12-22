@@ -8,9 +8,10 @@ class Stores(models.Model):
     """
         model for stores
     """
-    name = models.TextField(verbose_name=u'Store Name')
+    name = models.CharField(verbose_name=u'Store Name',max_length=140)
     address = models.CharField(max_length=200, null=True, blank=True,
                                verbose_name=u'Store Address')
+
 
 
 class Articles(models.Model):
@@ -18,7 +19,7 @@ class Articles(models.Model):
     """
         model for articles
     """
-    name = models.TextField(verbose_name=u'Article Name')
+    name = models.CharField(verbose_name=u'Article Name',max_length=140)
     description = models.TextField(
         verbose_name=u'Article Description', blank=True, null=True)
     price = models.IntegerField(default=0, verbose_name=u'Article Price')
