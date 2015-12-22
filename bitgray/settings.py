@@ -13,13 +13,14 @@ SECRET_KEY = '02ckze!s_hxwbki$c8n9gqdmbl_8tna0^$w6&wkxc(-=7(h-g1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'shop',
+    'supershoes',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',

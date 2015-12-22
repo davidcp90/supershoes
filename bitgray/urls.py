@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
 from shop import urls as shop_urls
+from supershoes import urls as super_urls
 from django.conf.urls import url, include
 from rest_framework import routers
 from shop import views
+from django.conf.urls.static import static
 #Router for api URL's
 router = routers.DefaultRouter()
 router.register(r'clients', views.ClientViewSet)
@@ -33,6 +36,7 @@ url(r'^api_home/', 'shop.views.api_home', name='api_home'),
 url(r'^query_bills/', 'shop.views.query_bills', name='query_bills'),
 url(r'^purchase_interface/', 'shop.views.purchase_interface', name='purchase_interface'),
 url(r'^shop/', include(shop_urls)),
+url(r'^supershoes/', include(super_urls)),
 url(r'^shop-api/', include(router.urls)),
 url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
