@@ -20,15 +20,8 @@ from django.conf import settings
 from shop import urls as shop_urls
 from supershoes import urls as super_urls
 from django.conf.urls import url, include
-from rest_framework import routers
-from shop import views
+from supershoes import views
 from django.conf.urls.static import static
-#Router for api URL's
-router = routers.DefaultRouter()
-router.register(r'clients', views.ClientViewSet)
-router.register(r'purchases', views.PurchaseViewSet)
-router.register(r'locations', views.LocationViewSet)
-router.register(r'products', views.ProductViewSet)
 urlpatterns = [
 url(r'^$', 'shop.views.home', name='home'),
 url(r'^tech/', 'shop.views.tech', name='tech_suggestions'),
@@ -37,6 +30,7 @@ url(r'^query_bills/', 'shop.views.query_bills', name='query_bills'),
 url(r'^purchase_interface/', 'shop.views.purchase_interface', name='purchase_interface'),
 url(r'^shop/', include(shop_urls)),
 url(r'^supershoes/', include(super_urls)),
-url(r'^shop-api/', include(router.urls)),
+url(r'^services/stores/$', views.stores_list),
+url(r'^services/articles/$', views.articles_list),
 url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

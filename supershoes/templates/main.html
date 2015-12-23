@@ -10,8 +10,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Fjalla+One|Pacifico' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.6/lumen/bootstrap.min.css">
     <style type="text/css">
+    h1{font-size: 65px;}
+    h1 span{
+      position: relative;
+      top: 15px;
+    }
     .shoes-bg{
       font-size: 16px;
       background-repeat: no-repeat;
@@ -47,12 +52,12 @@
         <div class="col-sm-3" style="padding-left: 0;">
           <div class="list-group">
             <a href="{% url 'super_main' %}" class="list-group-item"><i class="fa fa-home"> </i> Home</a>
+                        <a href="{% url 'super_stores' %}" class="list-group-item"><i class="fa fa-shopping-bag"> </i> Stores</a>
             <a href="{% url 'super_articles' %}" class="list-group-item"><i class="fa fa-cube"> </i> Articles</a>
-            <a href="{% url 'super_stores' %}" class="list-group-item"><i class="fa fa-shopping-bag"> </i> Stores</a>
             <a href="{% url 'super_api' %}" class="list-group-item"><i class="fa fa-connectdevelop"> </i> API</a>
           </div>
         </div>
-        <div class="col-sm-8">
+        <div class="col-sm-8 well">
                   {% block content %}
         {% endblock content %}
         </div>
