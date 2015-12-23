@@ -1,0 +1,94 @@
+[
+{
+    "model": "supershoes.stores",
+    "pk": 1,
+    "fields": {
+        "name": "Las Margaritas",
+        "address": "Cra 23 # 150-98"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 2,
+    "fields": {
+        "name": "El Cortijo",
+        "address": "Calle 83a #115-20"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 3,
+    "fields": {
+        "name": "New York",
+        "address": "Central Park #123"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 4,
+    "fields": {
+        "name": "Canada",
+        "address": "Super Cold Place 345"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 5,
+    "fields": {
+        "name": "Heaven",
+        "address": "Paradise 111"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 6,
+    "fields": {
+        "name": "Egypt",
+        "address": "Pyramid Avenue"
+    }
+},
+{
+    "model": "supershoes.stores",
+    "pk": 7,
+    "fields": {
+        "name": "Montreux",
+        "address": "Deep Purple 123"
+    }
+},
+{
+    "model": "supershoes.articles",
+    "pk": 1,
+    "fields": {
+        "name": "DC 456 Santa Cruz",
+        "description": "Inspired on the surf culture, the DC 456 Santa Cruz shoes are perfect for skating and biking.",
+        "price": 75,
+        "total_in_shelf": 23,
+        "total_in_vault": 78,
+        "store": 7
+    }
+},
+{
+    "model": "supershoes.articles",
+    "pk": 2,
+    "fields": {
+        "name": "Nike Air",
+        "description": "The classic Nike Air shoes are for serious runners",
+        "price": 34,
+        "total_in_shelf": 87,
+        "total_in_vault": 12,
+        "store": 4
+    }
+},
+{
+    "model": "supershoes.articles",
+    "pk": 3,
+    "fields": {
+        "name": "Vans Classic",
+        "description": "Classic shoes for trending people",
+        "price": 23,
+        "total_in_shelf": 45,
+        "total_in_vault": 89,
+        "store": 4
+    }
+}
+]

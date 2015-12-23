@@ -1,0 +1,38 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$24000$MQBtUI1y3tzz$a+Du/d8+uFYJ0bhQmq1OVZgzvr4LfAMmOCbrTuHUQCA=",
+        "last_login": "2015-12-22T21:41:48Z",
+        "is_superuser": true,
+        "username": "bitgray",
+        "first_name": "",
+        "last_name": "",
+        "email": "bitgray@bitgray.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2015-12-09T19:56:42Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$24000$A3ALn6uUJOP5$/1/6j72WYcWWAm2E2WlhN1vy+7Bo2aRMXdAX8D742Ko=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "my_user",
+        "first_name": "",
+        "last_name": "",
+        "email": "myuser@my.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2015-12-23T16:54:19Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]

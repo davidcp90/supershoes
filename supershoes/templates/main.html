@@ -55,6 +55,7 @@
                         <a href="{% url 'super_stores' %}" class="list-group-item"><i class="fa fa-shopping-bag"> </i> Stores</a>
             <a href="{% url 'super_articles' %}" class="list-group-item"><i class="fa fa-cube"> </i> Articles</a>
             <a href="{% url 'super_api' %}" class="list-group-item"><i class="fa fa-connectdevelop"> </i> API</a>
+            <a href="https://github.com/davidcp90/supershoes" class="list-group-item"><i class="fa fa-github"> </i> Github Repository</a>
           </div>
         </div>
         <div class="col-sm-8 well">
@@ -73,13 +74,6 @@
     {% block javascript %}
       <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-      {% if new_url %}
-        <script type="text/javascript">
-        $(function() {
-        window.history.pushState({}, null, "{{new_url}}");
-        });
-        </script>
-      {% endif %}
     {% endblock javascript %}
   </body>
 </html>

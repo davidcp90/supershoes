@@ -8,8 +8,10 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view, permission_classes, renderer_classes
 from rest_framework.permissions import IsAdminUser
+from rest_framework.response import Response
+from rest_framework_xml.renderers import XMLRenderer
 def main(request):
 	data = {}
 	data['title'] = 'Home'
@@ -122,3 +124,62 @@ def list_articles_by_store(request, store_id, format=None,):
 		finished['error_msg']= 'Bad Request'
 		finished['error_code']=400
 	return JSONResponse(finished)
+
+#XML Services
+@api_view()
+@permission_classes((IsAdminUser, ))
+def user_count_view(request, format=None):
+    """
+    A view that returns the count of active users in XML.
+    """
+    user_count = User.objects.filter(active=True).count()
+    content = {'user_count': user_count}
+    return Response(content)
+
+@api_view()
+@permission_classes((IsAdminUser, ))
+@renderer_classes((XMLRenderer,))
+def stores_list_xml(request, format=None):
+	if request.method == 'GET':
+		stores = Stores.objects.all()
+		serializer = StoresSerializer(stores, many=True)
+		finished={}
+		finished['stores']=serializer.data
+		finished['success']=True
+		finished['total_elements']=stores.count()
+		return Response(finished)
+
+@api_view()
+@permission_classes((IsAdminUser, ))
+@renderer_classes((XMLRenderer,))
+def articles_list_xml(request, format=None):
+	finished={}
+	articles = Articles.objects.all()
+	serializer = ArticlesSerializer(articles, many=True)
+	finished['articles']=serializer.data
+	finished['success']=True
+	finished['total_elements']=articles.count()
+	return Response(finished)
+
+@api_view()
+@permission_classes((IsAdminUser, ))
+@renderer_classes((XMLRenderer,))
+def list_articles_by_store_xml(request, store_id, format=None,):
+	finished={}
+	if store_id.isnumeric():
+		store=Stores.objects.filter(id=store_id)
+		if store.exists():
+			articles = Articles.objects.filter(store=store)
+			serializer = ArticlesSerializer(articles, many=True)
+			finished['articles']=serializer.data
+			finished['success']='true'
+			finished['total_elements']=articles.count()
+		else:
+			finished['success']='false'
+			finished['error_msg']= 'Record Not Found'
+			finished['error_code']=404
+	else:
+		finished['success']='false'
+		finished['error_msg']= 'Bad Request'
+		finished['error_code']=400
+	return Response(finished)
