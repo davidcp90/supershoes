@@ -8,5 +8,5 @@ class StoresSerializer(serializers.ModelSerializer):
 class ArticlesSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Articles
-		fields = ('id', 'name', 'description','price','total_in_shelf','total_in_vault','store')
+		fields = ('id', 'name', 'description','price','total_in_shelf','total_in_vault','store_name')
 

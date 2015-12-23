@@ -33,3 +33,6 @@ class Articles(models.Model):
 		related_name='article_store',
 		verbose_name='Store'
 	)
+	@property
+	def store_name(self):
+	    return self.store.name	
